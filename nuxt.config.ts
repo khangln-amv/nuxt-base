@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
+    '@nuxt/a11y',
     '@nuxt/image',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
@@ -48,5 +49,9 @@ export default defineNuxtConfig({
 
   image: {
     // provider: 'none'
+  },
+
+  a11y: {
+    enabled: false,
   },
 });
