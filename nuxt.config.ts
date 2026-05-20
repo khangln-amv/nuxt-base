@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/a11y',
+    '@nuxt/hints',
     '@nuxt/image',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
@@ -53,5 +54,15 @@ export default defineNuxtConfig({
 
   a11y: {
     enabled: false,
+  },
+
+  hints: {
+    features: {
+      hydration: false,
+      lazyLoad: true,
+      webVitals: true,
+      thirdPartyScripts: false,
+      htmlValidate: true,
+    },
   },
 });
