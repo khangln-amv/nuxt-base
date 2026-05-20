@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
+    '@nuxtjs/i18n',
   ],
 
   devtools: {
@@ -64,5 +65,29 @@ export default defineNuxtConfig({
 
   image: {
     // provider: 'none'
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en-US',
+        file: 'en.json',
+      },
+      {
+        code: 'ja',
+        name: '日本語',
+        language: 'ja-JP',
+        file: 'ja.json',
+      },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        language: 'vi-VN',
+        file: 'vi.json',
+      },
+    ],
+    defaultLocale: 'en',
   },
 });

@@ -1,4 +1,10 @@
-<script setup>
+<script setup lang="ts">
+const { uiLocale } = useUiLocale();
+const { localeProperties, t } = useI18n();
+
+const lang = computed(() => localeProperties.value.language ?? uiLocale.value.code);
+const dir = computed(() => uiLocale.value.dir);
+
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -7,12 +13,15 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' },
   ],
   htmlAttrs: {
-    lang: 'en',
+    lang: lang,
+    dir: dir,
   }
 });
 
-const title = 'Nuxt Starter Template';
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.';
+const title = t('app.title');
+const description = t('app.description');
+const githubAriaLabel = computed(() => t('app.github'));
+const footerText = computed(() => t('app.footer', { year: new Date().getFullYear() }));
 
 useSeoMeta({
   title,
@@ -42,7 +51,7 @@ useSeoMeta({
           to="https://github.com/nuxt-ui-templates/starter"
           target="_blank"
           icon="i-simple-icons-github"
-          aria-label="GitHub"
+          :aria-label="githubAriaLabel"
           color="neutral"
           variant="ghost"
         />
@@ -58,7 +67,7 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          {{ footerText }}
         </p>
       </template>
 
@@ -67,7 +76,7 @@ useSeoMeta({
           to="https://github.com/nuxt-ui-templates/starter"
           target="_blank"
           icon="i-simple-icons-github"
-          aria-label="GitHub"
+          :aria-label="githubAriaLabel"
           color="neutral"
           variant="ghost"
         />
