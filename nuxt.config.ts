@@ -12,11 +12,23 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
 
+  imports: {
+    dirs: [
+      '~/composables/**',
+    ],
+  },
+
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      apiUrl: '', // override by NUXT_PUBLIC_API_URL, this is just the default
+    },
+  },
 
   routeRules: {
     '/': { prerender: true }
