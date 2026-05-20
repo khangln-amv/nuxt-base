@@ -10,11 +10,23 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
+  imports: {
+    dirs: [
+      '~/composables/**',
+    ],
+  },
+
   devtools: {
     enabled: true
   },
 
   css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      apiUrl: '', // override by NUXT_PUBLIC_API_URL, this is just the default
+    },
+  },
 
   routeRules: {
     '/': { prerender: true }
