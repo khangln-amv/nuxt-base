@@ -30,6 +30,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-15',
 
+  a11y: {
+    enabled: false,
+  },
+
   eslint: {
     config: {
       stylistic: {
@@ -50,10 +54,6 @@ export default defineNuxtConfig({
 
   image: {
     // provider: 'none'
-  },
-
-  a11y: {
-    enabled: false,
   },
 
   hints: {
