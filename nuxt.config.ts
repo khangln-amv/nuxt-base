@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxt/image',
   ],
 
   devtools: {
@@ -41,5 +42,9 @@ export default defineNuxtConfig({
     //   { name: 'My Font Family', provider: 'google' },
     //   { name: 'Other Font', src: 'https://example.com/font.woff2' },
     // ]
+  },
+
+  image: {
+    // provider: 'none'
   },
 });
