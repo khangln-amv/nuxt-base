@@ -1,0 +1,9 @@
+{
+  "hello": "xin chào",
+  "app": {
+    "title": "Tựa đề mẫu",
+    "description": "Miêu tả mẫu",
+    "github": "GitHub",
+    "footer": "Xây dựng bằng Nuxt UI • © {year}"
+  }
+}
