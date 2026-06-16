@@ -1,0 +1,9 @@
+{
+  "hello": "こんにちは",
+  "app": {
+    "title": "プレースホルダータイトル",
+    "description": "プレースホルダーの説明",
+    "github": "GitHub",
+    "footer": "Nuxt UI で構築 • © {year}"
+  }
+}

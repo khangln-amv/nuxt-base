@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
+    '@nuxtjs/i18n',
   ],
 
   devtools: {
@@ -61,6 +62,30 @@ export default defineNuxtConfig({
       thirdPartyScripts: false,
       htmlValidate: true,
     },
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en-US',
+        file: 'en.json',
+      },
+      {
+        code: 'ja',
+        name: '日本語',
+        language: 'ja-JP',
+        file: 'ja.json',
+      },
+      {
+        code: 'vi',
+        name: 'Tiếng Việt',
+        language: 'vi-VN',
+        file: 'vi.json',
+      },
+    ],
+    defaultLocale: 'en',
   },
 
   image: {

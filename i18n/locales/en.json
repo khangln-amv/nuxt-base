@@ -1,0 +1,9 @@
+{
+  "hello": "hello",
+  "app": {
+    "title": "Placeholder Title",
+    "description": "Placeholder Description",
+    "github": "GitHub",
+    "footer": "Built with Nuxt UI • © {year}"
+  }
+}
