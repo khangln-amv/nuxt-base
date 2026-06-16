@@ -5,7 +5,7 @@ export default defineNuxtPlugin({
     const config = useRuntimeConfig();
 
     const apiFetch = $fetch.create({
-      baseURL: config.public.apiUrl,
+      baseURL: config.public.apiUrl, // if not provide, use the same URI as frontend, only needed when use external backend
       onRequest: ({ request, options, error }) => {
         // TODO: example: intercept request, error,...
         console.log(request);
