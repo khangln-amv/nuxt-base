@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
 
   css: ['~/assets/css/main.css'],
@@ -52,10 +52,6 @@ export default defineNuxtConfig({
     // ]
   },
 
-  image: {
-    // provider: 'none'
-  },
-
   hints: {
     features: {
       hydration: false,
@@ -64,5 +60,9 @@ export default defineNuxtConfig({
       thirdPartyScripts: false,
       htmlValidate: true,
     },
+  },
+
+  image: {
+    // provider: 'none'
   },
 });
