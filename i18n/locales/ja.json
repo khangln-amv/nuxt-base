@@ -1,9 +1,83 @@
 {
-  "hello": "こんにちは",
   "app": {
-    "title": "プレースホルダータイトル",
-    "description": "プレースホルダーの説明",
+    "title": "Nuxt Base",
+    "description": "Nuxt UI・i18n・型付きサーバー API を備えた Nuxt 4 スターター。",
     "github": "GitHub",
     "footer": "Nuxt UI で構築 • © {year}"
+  },
+  "auth": {
+    "signIn": "サインイン",
+    "signOut": "サインアウト"
+  },
+  "errors": {
+    "validation": "入力内容を確認してもう一度お試しください。",
+    "unauthorized": "続行するにはサインインしてください。",
+    "forbidden": "このリソースにアクセスする権限がありません。",
+    "not_found": "お探しのものが見つかりませんでした。",
+    "server_error": "サーバー側で問題が発生しました。もう一度お試しください。",
+    "upstream": "外部データソースが現在利用できません。しばらくしてからもう一度お試しください。",
+    "db": "問題が発生しました。もう一度お試しください。",
+    "unknown": "問題が発生しました。もう一度お試しください。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "dashboard": "ダッシュボード",
+    "users": "ユーザー",
+    "language": "言語"
+  },
+  "landing": {
+    "title": "すぐに開発を始められる、整った Nuxt ベース",
+    "description": "厳選された Nuxt 4 スターター — Nuxt UI コンポーネント、ダークモード、多言語 i18n、そして完全に型付けされたサーバー API。",
+    "dashboardCta": "ダッシュボードを開く",
+    "usersCta": "ユーザーを見る",
+    "featuresTitle": "含まれるもの",
+    "features": {
+      "i18n": {
+        "title": "多言語対応",
+        "description": "英語・日本語・ベトナム語に標準対応し、ロケール切り替えも可能。"
+      },
+      "ui": {
+        "title": "Nuxt UI",
+        "description": "アクセシブルでテーマ設定可能なコンポーネント。ライト／ダークモードを内蔵。"
+      },
+      "api": {
+        "title": "型付き API レイヤー",
+        "description": "Nuxt サーバールートに支えられた、エンドツーエンドで型付けされたデータ取得。"
+      }
+    }
+  },
+  "dashboard": {
+    "welcome": "おかえりなさい、{name} さん",
+    "placeholder": "これはプレースホルダーです。実際のダッシュボードの内容はここに入ります。",
+    "stats": {
+      "users": "総ユーザー数",
+      "active": "アクティブユーザー",
+      "admins": "管理者"
+    }
+  },
+  "users": {
+    "searchPlaceholder": "名前またはメールで検索…",
+    "refresh": "更新",
+    "retry": "再試行",
+    "empty": "ユーザーが見つかりません。",
+    "columns": {
+      "user": "ユーザー",
+      "role": "ロール",
+      "status": "ステータス"
+    },
+    "roles": {
+      "admin": "管理者",
+      "user": "ユーザー"
+    },
+    "activate": "ユーザーを有効化",
+    "deactivate": "ユーザーを無効化",
+    "cannotToggleSelf": "自分のアカウントのステータスは変更できません。",
+    "activated": "ユーザーを有効化しました",
+    "deactivated": "ユーザーを無効化しました"
+  },
+  "table": {
+    "rowsPerPage": "表示件数",
+    "range": "{total}件中 {from}–{to}",
+    "loading": "読み込み中…"
   }
 }

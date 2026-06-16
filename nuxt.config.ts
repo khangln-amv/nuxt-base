@@ -102,5 +102,6 @@ export default defineNuxtConfig({
 
   image: {
     // provider: 'none'
+    domains: ['i.pravatar.cc'], // demo avatars (server/utils/usersStore); drop when using real images
   },
 });

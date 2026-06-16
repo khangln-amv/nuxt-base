@@ -1,9 +1,83 @@
 {
-  "hello": "xin chào",
   "app": {
-    "title": "Tựa đề mẫu",
-    "description": "Miêu tả mẫu",
+    "title": "Nuxt Base",
+    "description": "Bộ khởi tạo Nuxt 4 với Nuxt UI, i18n và API máy chủ có kiểu chặt chẽ.",
     "github": "GitHub",
     "footer": "Xây dựng bằng Nuxt UI • © {year}"
+  },
+  "auth": {
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất"
+  },
+  "errors": {
+    "validation": "Vui lòng kiểm tra các trường được đánh dấu và thử lại.",
+    "unauthorized": "Vui lòng đăng nhập để tiếp tục.",
+    "forbidden": "Bạn không có quyền truy cập tài nguyên này.",
+    "not_found": "Không tìm thấy nội dung bạn cần.",
+    "server_error": "Đã xảy ra lỗi từ phía máy chủ. Vui lòng thử lại.",
+    "upstream": "Nguồn dữ liệu bên ngoài hiện không khả dụng. Vui lòng thử lại sau.",
+    "db": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "unknown": "Đã xảy ra lỗi. Vui lòng thử lại."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển",
+    "users": "Người dùng",
+    "language": "Ngôn ngữ"
+  },
+  "landing": {
+    "title": "Nền tảng Nuxt gọn gàng, sẵn sàng để phát triển",
+    "description": "Bộ khởi tạo Nuxt 4 có chủ kiến — các thành phần Nuxt UI, chế độ tối, đa ngôn ngữ i18n và API máy chủ có kiểu đầy đủ.",
+    "dashboardCta": "Mở bảng điều khiển",
+    "usersCta": "Xem người dùng",
+    "featuresTitle": "Bao gồm những gì",
+    "features": {
+      "i18n": {
+        "title": "Đa ngôn ngữ",
+        "description": "Hỗ trợ sẵn tiếng Anh, tiếng Nhật và tiếng Việt, kèm bộ chuyển ngôn ngữ."
+      },
+      "ui": {
+        "title": "Nuxt UI",
+        "description": "Các thành phần dễ truy cập, tùy biến giao diện, tích hợp sẵn chế độ sáng và tối."
+      },
+      "api": {
+        "title": "Tầng API có kiểu",
+        "description": "Lấy dữ liệu có kiểu đầu-cuối, dựa trên các route máy chủ của Nuxt."
+      }
+    }
+  },
+  "dashboard": {
+    "welcome": "Chào mừng trở lại, {name}",
+    "placeholder": "Đây là nội dung tạm thời — nội dung bảng điều khiển thực sự sẽ nằm ở đây.",
+    "stats": {
+      "users": "Tổng người dùng",
+      "active": "Người dùng hoạt động",
+      "admins": "Quản trị viên"
+    }
+  },
+  "users": {
+    "searchPlaceholder": "Tìm theo tên hoặc email…",
+    "refresh": "Làm mới",
+    "retry": "Thử lại",
+    "empty": "Không tìm thấy người dùng.",
+    "columns": {
+      "user": "Người dùng",
+      "role": "Vai trò",
+      "status": "Trạng thái"
+    },
+    "roles": {
+      "admin": "Quản trị",
+      "user": "Người dùng"
+    },
+    "activate": "Kích hoạt người dùng",
+    "deactivate": "Vô hiệu hóa người dùng",
+    "cannotToggleSelf": "Bạn không thể thay đổi trạng thái tài khoản của chính mình.",
+    "activated": "Đã kích hoạt người dùng",
+    "deactivated": "Đã vô hiệu hóa người dùng"
+  },
+  "table": {
+    "rowsPerPage": "Số dòng mỗi trang",
+    "range": "{from}–{to} trên {total}",
+    "loading": "Đang tải…"
   }
 }

@@ -1,9 +1,17 @@
 <script setup lang="ts">
 const { uiLocale } = useUiLocale();
-const { localeProperties, t } = useI18n();
+const { localeProperties, t, te } = useI18n();
+const route = useRoute();
 
 const lang = computed(() => localeProperties.value.language ?? uiLocale.value.code);
 const dir = computed(() => uiLocale.value.dir);
+
+const appName = computed(() => t('app.title'));
+
+const pageTitle = computed(() => {
+  const key = route.meta.title as string | undefined;
+  return key && te(key) ? t(key) : '';
+});
 
 useHead({
   meta: [
@@ -15,74 +23,24 @@ useHead({
   htmlAttrs: {
     lang: lang,
     dir: dir,
-  }
+  },
+  titleTemplate: title => title ? `${title} · ${appName.value}` : appName.value,
 });
 
-const title = t('app.title');
-const description = t('app.description');
-const githubAriaLabel = computed(() => t('app.github'));
-const footerText = computed(() => t('app.footer', { year: new Date().getFullYear() }));
-
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
+  title: () => pageTitle.value,
+  description: () => t('app.description'),
+  ogTitle: () => pageTitle.value ? `${pageTitle.value} · ${appName.value}` : appName.value,
+  ogDescription: () => t('app.description'),
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  twitterCard: 'summary_large_image',
 });
 </script>
 
 <template>
-  <UApp>
-    <UHeader>
-      <template #left>
-        <ULink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
-        </ULink>
-
-        <TemplateMenu />
-      </template>
-
-      <template #right>
-        <UColorModeButton />
-
-        <LanguageSwitcher />
-
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          :aria-label="githubAriaLabel"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UHeader>
-
-    <UMain>
+  <UApp :locale="uiLocale" :dir="dir">
+    <NuxtLayout>
       <NuxtPage />
-    </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          {{ footerText }}
-        </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          :aria-label="githubAriaLabel"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UFooter>
+    </NuxtLayout>
   </UApp>
 </template>

@@ -6,15 +6,14 @@ export default defineNuxtPlugin({
 
     const apiFetch = $fetch.create({
       baseURL: config.public.apiUrl, // if not provide, use the same URI as frontend, only needed when use external backend
-      onRequest: ({ request, options, error }) => {
-        // TODO: example: intercept request, error,...
-        console.log(request);
-        console.log(error);
+      onRequest: ({ options }) => {
+        // TODO: example — inspect/transform the outgoing request here.
+        // console.log(request);
 
         // TODO: apply real auth here
         // const { session } = useUserSession();
         const session = ref({
-          token: 'askdjkaskdkasdkakjsdj',
+          token: 'demo-token',
         });
 
         if (session.value?.token) {

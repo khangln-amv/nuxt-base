@@ -1,9 +1,83 @@
 {
-  "hello": "hello",
   "app": {
-    "title": "Placeholder Title",
-    "description": "Placeholder Description",
+    "title": "Nuxt Base",
+    "description": "A Nuxt 4 starter with Nuxt UI, i18n and a typed server API.",
     "github": "GitHub",
     "footer": "Built with Nuxt UI • © {year}"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "errors": {
+    "validation": "Please check the highlighted fields and try again.",
+    "unauthorized": "Please sign in to continue.",
+    "forbidden": "You don’t have access to this resource.",
+    "not_found": "We couldn’t find what you were looking for.",
+    "server_error": "Something went wrong on our end. Please try again.",
+    "upstream": "An external data source is unavailable right now. Please try again later.",
+    "db": "Something went wrong. Please try again.",
+    "unknown": "Something went wrong. Please try again."
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "language": "Language"
+  },
+  "landing": {
+    "title": "A clean Nuxt base, ready to build on",
+    "description": "An opinionated Nuxt 4 starter — Nuxt UI components, dark mode, multi-language i18n and a fully typed server API.",
+    "dashboardCta": "Open the dashboard",
+    "usersCta": "Browse users",
+    "featuresTitle": "What's included",
+    "features": {
+      "i18n": {
+        "title": "Internationalized",
+        "description": "English, Japanese and Vietnamese out of the box, with a locale switcher."
+      },
+      "ui": {
+        "title": "Nuxt UI",
+        "description": "Accessible, themeable components with built-in light and dark modes."
+      },
+      "api": {
+        "title": "Typed API layer",
+        "description": "End-to-end typed data fetching backed by Nuxt server routes."
+      }
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {name}",
+    "placeholder": "This is a placeholder — real dashboard content goes here.",
+    "stats": {
+      "users": "Total users",
+      "active": "Active users",
+      "admins": "Admins"
+    }
+  },
+  "users": {
+    "searchPlaceholder": "Search by name or email…",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "empty": "No users found.",
+    "columns": {
+      "user": "User",
+      "role": "Role",
+      "status": "Status"
+    },
+    "roles": {
+      "admin": "Admin",
+      "user": "User"
+    },
+    "activate": "Activate user",
+    "deactivate": "Deactivate user",
+    "cannotToggleSelf": "You can’t change your own account status.",
+    "activated": "User activated",
+    "deactivated": "User deactivated"
+  },
+  "table": {
+    "rowsPerPage": "Rows per page",
+    "range": "{from}–{to} of {total}",
+    "loading": "Loading…"
   }
 }
