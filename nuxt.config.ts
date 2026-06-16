@@ -63,10 +63,6 @@ export default defineNuxtConfig({
     },
   },
 
-  image: {
-    // provider: 'none'
-  },
-
   i18n: {
     locales: [
       {
@@ -89,5 +85,9 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'en',
+  },
+
+  image: {
+    // provider: 'none'
   },
 });
