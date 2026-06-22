@@ -23,6 +23,7 @@
     "home": "Home",
     "dashboard": "Dashboard",
     "users": "Users",
+    "products": "Products",
     "language": "Language"
   },
   "landing": {
@@ -74,6 +75,16 @@
     "cannotToggleSelf": "You can’t change your own account status.",
     "activated": "User activated",
     "deactivated": "User deactivated"
+  },
+  "products": {
+    "searchPlaceholder": "Search products…",
+    "retry": "Retry",
+    "error": "Couldn’t load products. Please try again.",
+    "empty": "No products found.",
+    "columns": {
+      "name": "Name",
+      "price": "Price"
+    }
   },
   "table": {
     "rowsPerPage": "Rows per page",

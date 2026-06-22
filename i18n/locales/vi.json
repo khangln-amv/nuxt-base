@@ -23,6 +23,7 @@
     "home": "Trang chủ",
     "dashboard": "Bảng điều khiển",
     "users": "Người dùng",
+    "products": "Sản phẩm",
     "language": "Ngôn ngữ"
   },
   "landing": {
@@ -74,6 +75,16 @@
     "cannotToggleSelf": "Bạn không thể thay đổi trạng thái tài khoản của chính mình.",
     "activated": "Đã kích hoạt người dùng",
     "deactivated": "Đã vô hiệu hóa người dùng"
+  },
+  "products": {
+    "searchPlaceholder": "Tìm sản phẩm…",
+    "retry": "Thử lại",
+    "error": "Không thể tải sản phẩm. Vui lòng thử lại.",
+    "empty": "Không tìm thấy sản phẩm.",
+    "columns": {
+      "name": "Tên",
+      "price": "Giá"
+    }
   },
   "table": {
     "rowsPerPage": "Số dòng mỗi trang",

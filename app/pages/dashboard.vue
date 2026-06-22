@@ -48,13 +48,13 @@ const stats = computed(() => [
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <UPageCard
-            v-for="stat in stats"
-            :key="stat.label"
-            :icon="stat.icon"
-            :title="stat.value"
-            :description="stat.label"
-          />
+          <template v-for="stat in stats" :key="stat.label">
+            <UPageCard
+              :icon="stat.icon"
+              :title="stat.value"
+              :description="stat.label"
+            />
+          </template>
         </div>
       </div>
     </template>

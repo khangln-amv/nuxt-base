@@ -10,6 +10,7 @@ const links = computed<NavigationMenuItem[][]>(() => [
   [
     { label: t('nav.dashboard'), icon: 'i-lucide-layout-dashboard', to: '/dashboard' },
     { label: t('nav.users'), icon: 'i-lucide-users', to: '/users' },
+    { label: t('nav.products'), icon: 'i-lucide-package', to: '/products' },
   ],
 ]);
 </script>

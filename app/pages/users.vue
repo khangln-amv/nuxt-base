@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { TableColumn } from '#ui/components/Table.vue';
-
 definePageMeta({
   // middleware: ['auth', 'admin'], //TODO: integrate middleware when needed
   layout: 'admin',
@@ -29,6 +27,9 @@ const currentUser = ref<UserData>({
   role: UserRole.Admin,
 });
 
+// ── Page owns the data + UI state (Pattern A: smart page / dumb partials) ──
+// Filter + pagination live here so the toolbar, table and fetch stay in sync;
+// the <UsersTable> partial just renders props and emits intents.
 const filter = ref('');
 const debouncedFilter = useDebounce(filter, 300);
 const page = ref(1);
@@ -57,24 +58,6 @@ const users = computed(() => data.value?.data ?? []);
 const total = computed(() => data.value?.total ?? 0);
 const pendingOrIdling = computed(() => ['pending', 'idle'].includes(status.value));
 
-const columns = computed<TableColumn<UserData>[]>(() => [
-  { id: 'user', accessorKey: 'name', header: t('users.columns.user') },
-  { id: 'role', accessorKey: 'role', header: t('users.columns.role'), size: 120 },
-  {
-    id: 'status',
-    accessorKey: 'isActive',
-    header: t('users.columns.status'),
-    size: 120,
-    meta: { class: { th: 'text-right', td: 'text-right' } },
-  },
-]);
-
-const isSelf = (u: UserData) => u.id === currentUser.value?.id;
-function toggleTooltip(u: UserData) {
-  if (isSelf(u)) return t('users.cannotToggleSelf');
-  return u.isActive ? t('users.deactivate') : t('users.activate');
-}
-
 const { toggle: setActive, isPending } = useOptimisticToggle<UserData, 'isActive'>(
   'isActive',
   async (u, isActive) => {
@@ -99,89 +82,25 @@ const { toggle: setActive, isPending } = useOptimisticToggle<UserData, 'isActive
     <template #body>
       <div class="flex h-full flex-col">
         <template v-if="status === 'error'">
-          <UAlert
-            color="error"
-            variant="subtle"
-            icon="i-lucide-circle-alert"
-            :title="errorMessage"
-            :actions="[{
-              label: t('users.retry'),
-              color: 'error',
-              variant: 'solid',
-              icon: 'i-lucide-refresh-cw',
-              onClick: () => refresh(),
-            }]"
+          <AppErrorAlert
+            :message="errorMessage"
+            :retry-label="t('users.retry')"
+            @retry="refresh"
           />
         </template>
-
         <template v-else>
-          <AppDataTable
+          <UsersTable
             v-model:page="page"
             v-model:page-size="pageSize"
-            :data="users"
-            :columns="columns"
+            v-model:filter="filter"
+            :users="users"
             :total="total"
             :loading="pendingOrIdling"
-            :pinned-right="['status']"
-            :empty="t('users.empty')"
-            class="min-h-0 flex-1"
-          >
-            <template #toolbar>
-              <div class="flex gap-2">
-                <UInput
-                  v-model="filter"
-                  icon="i-lucide-search"
-                  :placeholder="t('users.searchPlaceholder')"
-                  class="w-full sm:max-w-xs"
-                />
-                <UButton
-                  color="neutral"
-                  variant="outline"
-                  icon="i-lucide-refresh-cw"
-                  :loading="pendingOrIdling"
-                  :label="t('users.refresh')"
-                  @click="refresh()"
-                />
-              </div>
-            </template>
-
-            <!-- Primary column: avatar + name + email subline. -->
-            <template #user-cell="{ row }">
-              <div class="flex min-w-0 items-center gap-3 py-0.5">
-                <UAvatar
-                  :src="row.original.avatar ?? undefined"
-                  :text="row.original.name.charAt(0).toUpperCase()"
-                  :alt="row.original.name"
-                  size="md"
-                />
-                <div class="flex min-w-0 flex-col">
-                  <span class="truncate font-medium text-default">{{ row.original.name }}</span>
-                  <span class="truncate text-sm text-muted">{{ row.original.email }}</span>
-                </div>
-              </div>
-            </template>
-
-            <template #role-cell="{ row }">
-              <UBadge :color="row.original.role === 'admin' ? 'primary' : 'neutral'" variant="subtle">
-                {{ t(`users.roles.${row.original.role}`) }}
-              </UBadge>
-            </template>
-
-            <!-- Frozen status column: the activate/deactivate toggle. -->
-            <template #status-cell="{ row }">
-              <div class="flex items-center justify-end">
-                <UTooltip :text="toggleTooltip(row.original)">
-                  <USwitch
-                    :model-value="row.original.isActive"
-                    :loading="isPending(row.original.id)"
-                    :disabled="isSelf(row.original) || isPending(row.original.id)"
-                    :aria-label="toggleTooltip(row.original)"
-                    @update:model-value="(val) => setActive(row.original, val)"
-                  />
-                </UTooltip>
-              </div>
-            </template>
-          </AppDataTable>
+            :current-user="currentUser"
+            :is-pending="isPending"
+            @refresh="refresh"
+            @toggle="setActive"
+          />
         </template>
       </div>
     </template>

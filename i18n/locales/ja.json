@@ -23,6 +23,7 @@
     "home": "ホーム",
     "dashboard": "ダッシュボード",
     "users": "ユーザー",
+    "products": "製品",
     "language": "言語"
   },
   "landing": {
@@ -74,6 +75,16 @@
     "cannotToggleSelf": "自分のアカウントのステータスは変更できません。",
     "activated": "ユーザーを有効化しました",
     "deactivated": "ユーザーを無効化しました"
+  },
+  "products": {
+    "searchPlaceholder": "製品を検索…",
+    "retry": "再試行",
+    "error": "製品を読み込めませんでした。もう一度お試しください。",
+    "empty": "製品が見つかりません。",
+    "columns": {
+      "name": "名称",
+      "price": "価格"
+    }
   },
   "table": {
     "rowsPerPage": "表示件数",

@@ -21,3 +21,10 @@ export interface Paginated<T> {
   page: number;
   limit: number;
 }
+
+// Demo resource for the data-fetching showcase (pages/products.vue).
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+}
