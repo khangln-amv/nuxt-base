@@ -24,6 +24,8 @@
     "dashboard": "ダッシュボード",
     "users": "ユーザー",
     "products": "製品",
+    "patterns": "パターン",
+    "mutations": "ミューテーション",
     "language": "言語"
   },
   "landing": {
@@ -85,6 +87,12 @@
       "name": "名称",
       "price": "価格"
     }
+  },
+  "mutations": {
+    "description": "読み取りは TanStack の useQuery（キャッシュ・重複排除・stale-while-revalidate）、書き込みは useMutation —— 楽観的更新、エラー時の自動ロールバック、その後のキャッシュ無効化。ユーザーページの手書き useOptimisticToggle と比較してください。",
+    "revalidating": "再検証中…",
+    "chaosTitle": "障害シミュレーションが有効です",
+    "chaosHint": "トグルはサーバー側で約30%失敗し、楽観的更新がロールバックする様子を確認できます。server/utils/chaos.ts の MUTATION_FAIL_RATE で調整できます。"
   },
   "table": {
     "rowsPerPage": "表示件数",

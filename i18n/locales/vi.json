@@ -24,6 +24,8 @@
     "dashboard": "Bảng điều khiển",
     "users": "Người dùng",
     "products": "Sản phẩm",
+    "patterns": "Mẫu",
+    "mutations": "Mutation",
     "language": "Ngôn ngữ"
   },
   "landing": {
@@ -85,6 +87,12 @@
       "name": "Tên",
       "price": "Giá"
     }
+  },
+  "mutations": {
+    "description": "Đọc bằng useQuery của TanStack (có cache, gộp trùng, stale-while-revalidate); ghi bằng useMutation — cập nhật lạc quan, tự động hoàn tác khi lỗi, rồi vô hiệu hóa cache. Hãy so sánh với useOptimisticToggle tự viết ở trang Người dùng.",
+    "revalidating": "Đang xác thực lại…",
+    "chaosTitle": "Đang bật mô phỏng lỗi",
+    "chaosHint": "Thao tác bật/tắt sẽ thất bại ~30% (phía máy chủ) để bạn thấy cập nhật lạc quan được hoàn tác. Điều chỉnh MUTATION_FAIL_RATE trong server/utils/chaos.ts."
   },
   "table": {
     "rowsPerPage": "Số dòng mỗi trang",

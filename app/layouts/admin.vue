@@ -10,7 +10,13 @@ const links = computed<NavigationMenuItem[][]>(() => [
   [
     { label: t('nav.dashboard'), icon: 'i-lucide-layout-dashboard', to: '/dashboard' },
     { label: t('nav.users'), icon: 'i-lucide-users', to: '/users' },
+  ],
+  // "Patterns" — the teaching pages. The `{ type: 'label' }` item renders a
+  // non-interactive group heading (it has no `to`, so the sidebar leaves it alone).
+  [
+    { type: 'label', label: t('nav.patterns') },
     { label: t('nav.products'), icon: 'i-lucide-package', to: '/products' },
+    { label: t('nav.mutations'), icon: 'i-lucide-toggle-right', to: '/mutations' },
   ],
 ]);
 </script>

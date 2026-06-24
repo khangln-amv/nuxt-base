@@ -16,6 +16,17 @@ export default defineNuxtConfig({
     dirs: [
       '~/composables/**',
     ],
+    // Opt a plain npm package into Nuxt's auto-import. TanStack Query isn't a Nuxt
+    // module, so Nuxt doesn't register its composables for you — this `presets` entry
+    // does, so useQuery/useMutation/etc. are usable unprefixed everywhere, exactly
+    // like Nuxt's own useFetch/useAsyncData and our ~/composables. unimport reads the
+    // preset and only injects the import in files that actually use a listed name.
+    presets: [
+      {
+        from: '@tanstack/vue-query',
+        imports: ['useQuery', 'useMutation', 'useQueryClient', 'keepPreviousData'],
+      },
+    ],
   },
 
   devtools: {

@@ -1,16 +1,19 @@
 export const useUserApi = () => {
   const { $apiFetch } = useNuxtApp();
 
-  const getUsers = async (params?: {
-    q?: string;
-    page?: number;
-    limit?: number;
-  }) => $apiFetch<Paginated<UserData>>('/api/users', {
+  const getUsers = async (
+    params?: { q?: string; page?: number; limit?: number },
+    // Optional abort signal — forwarded to $apiFetch so callers (e.g. the
+    // useQuery on pages/mutations.vue) can cancel a superseded request. Optional
+    // and last so existing one-arg callers (users.vue) are unaffected.
+    opts?: { signal?: AbortSignal },
+  ) => $apiFetch<Paginated<UserData>>('/api/users', {
     query: {
       q: params?.q || undefined,
       page: params?.page,
       limit: params?.limit,
     },
+    signal: opts?.signal,
   });
   const getUser = async (id: string) => $apiFetch<UserData>(`/api/users/${id}`);
 

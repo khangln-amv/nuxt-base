@@ -24,6 +24,8 @@
     "dashboard": "Dashboard",
     "users": "Users",
     "products": "Products",
+    "patterns": "Patterns",
+    "mutations": "Mutations",
     "language": "Language"
   },
   "landing": {
@@ -85,6 +87,12 @@
       "name": "Name",
       "price": "Price"
     }
+  },
+  "mutations": {
+    "description": "Reads with TanStack useQuery (cached, deduped, stale-while-revalidate); writes with useMutation — optimistic update, automatic rollback on error, then cache invalidation. Compare with the hand-rolled useOptimisticToggle on the Users page.",
+    "revalidating": "Revalidating…",
+    "chaosTitle": "Simulated failures are on",
+    "chaosHint": "Toggles fail ~30% of the time (server-side) so you can watch the optimistic update roll back. Tune MUTATION_FAIL_RATE in server/utils/chaos.ts."
   },
   "table": {
     "rowsPerPage": "Rows per page",
