@@ -103,25 +103,41 @@ const groupTh = 'text-center border-s border-default';
 const boundary = { th: 'border-s border-default', td: 'border-s border-default' };
 
 const columns = computed<TableColumn<Order>[]>(() => [
+  //  This is for non-grouped base design
+
   {
-    id: 'order',
-    header: t('orders.groups.order'),
-    meta: { class: { th: 'text-center' } },
-    columns: [
-      {
-        id: 'orderId',
-        accessorKey: 'id',
-        header: t('orders.cols.orderId'),
-        meta: { class: { td: 'font-medium text-highlighted' } },
-      },
-      {
-        id: 'date',
-        accessorKey: 'date',
-        header: t('orders.cols.placed'),
-        cell: ({ row }) => fmtDate(row.original.date),
-      },
-    ],
+    id: 'orderId',
+    accessorKey: 'id',
+    header: t('orders.cols.orderId'),
+    meta: { class: { td: 'font-medium text-highlighted' } },
   },
+  {
+    id: 'date',
+    accessorKey: 'date',
+    header: t('orders.cols.placed'),
+    cell: ({ row }) => fmtDate(row.original.date),
+  },
+  //  This is for grouped base design
+
+  // {
+  //   id: 'order',
+  //   header: t('orders.groups.order'),
+  //   meta: { class: { th: 'text-center' } },
+  //   columns: [
+  //     {
+  //       id: 'orderId',
+  //       accessorKey: 'id',
+  //       header: t('orders.cols.orderId'),
+  //       meta: { class: { td: 'font-medium text-highlighted' } },
+  //     },
+  //     {
+  //       id: 'date',
+  //       accessorKey: 'date',
+  //       header: t('orders.cols.placed'),
+  //       cell: ({ row }) => fmtDate(row.original.date),
+  //     },
+  //   ],
+  // },
   {
     id: 'customer',
     header: t('orders.groups.customer'),
