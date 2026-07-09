@@ -16,6 +16,7 @@ const links = computed<NavigationMenuItem[][]>(() => [
   [
     { type: 'label', label: t('nav.patterns') },
     { label: t('nav.products'), icon: 'i-lucide-package', to: '/products' },
+    { label: t('nav.orders'), icon: 'i-lucide-shopping-cart', to: '/orders' },
     { label: t('nav.mutations'), icon: 'i-lucide-toggle-right', to: '/mutations' },
   ],
 ]);

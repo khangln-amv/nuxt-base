@@ -24,6 +24,7 @@
     "dashboard": "Bảng điều khiển",
     "users": "Người dùng",
     "products": "Sản phẩm",
+    "orders": "Đơn hàng",
     "patterns": "Mẫu",
     "mutations": "Mutation",
     "language": "Ngôn ngữ"
@@ -86,6 +87,46 @@
     "columns": {
       "name": "Tên",
       "price": "Giá"
+    }
+  },
+  "orders": {
+    "description": "Bảng rộng với tiêu đề nhóm (Đơn / Khách hàng / Vận chuyển / Thanh toán) cùng cột Thao tác được ghim luôn hiển thị khi cuộn ngang. Dùng chung AppDataTable với trang Người dùng — chỉ thay đổi phần định nghĩa cột.",
+    "searchPlaceholder": "Tìm theo mã đơn hoặc khách hàng…",
+    "retry": "Thử lại",
+    "error": "Không thể tải đơn hàng. Vui lòng thử lại.",
+    "empty": "Không tìm thấy đơn hàng.",
+    "groups": {
+      "order": "Đơn hàng",
+      "customer": "Khách hàng",
+      "shipping": "Vận chuyển",
+      "payment": "Thanh toán"
+    },
+    "cols": {
+      "orderId": "Mã đơn",
+      "placed": "Ngày đặt",
+      "name": "Tên",
+      "country": "Quốc gia",
+      "carrier": "Đơn vị VC",
+      "status": "Trạng thái",
+      "eta": "Dự kiến",
+      "method": "Phương thức",
+      "total": "Tổng",
+      "paid": "Đã trả"
+    },
+    "status": {
+      "pending": "Chờ xử lý",
+      "shipped": "Đã gửi",
+      "delivered": "Đã giao",
+      "cancelled": "Đã hủy"
+    },
+    "actions": {
+      "label": "Thao tác dòng",
+      "view": "Xem chi tiết",
+      "copy": "Sao chép mã đơn",
+      "track": "Theo dõi vận chuyển",
+      "viewToast": "Đang xem đơn {id}",
+      "copied": "Đã sao chép {id} vào clipboard",
+      "tracking": "Đang theo dõi đơn {id}"
     }
   },
   "mutations": {

@@ -28,3 +28,15 @@ export interface Product {
   name: string;
   price: number;
 }
+
+// Demo resource for the column-groups showcase (pages/orders.vue). The shape is
+// intentionally NESTED so it maps 1:1 onto the grouped table headers: each nested
+// object (customer / shipping / payment) becomes a header group, and its fields
+// become the leaf columns (addressed by dotted accessorKeys like `customer.name`).
+export interface Order {
+  id: string;
+  date: string; // ISO date (YYYY-MM-DD)
+  customer: { name: string; country: string };
+  shipping: { carrier: string; status: 'pending' | 'shipped' | 'delivered' | 'cancelled'; eta: string };
+  payment: { method: 'card' | 'paypal' | 'bank'; total: number; currency: string; paid: boolean };
+}

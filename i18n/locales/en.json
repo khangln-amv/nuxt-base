@@ -24,6 +24,7 @@
     "dashboard": "Dashboard",
     "users": "Users",
     "products": "Products",
+    "orders": "Orders",
     "patterns": "Patterns",
     "mutations": "Mutations",
     "language": "Language"
@@ -86,6 +87,46 @@
     "columns": {
       "name": "Name",
       "price": "Price"
+    }
+  },
+  "orders": {
+    "description": "A wide table with grouped headers (Order / Customer / Shipping / Payment) plus a frozen Actions column that stays visible while you scroll sideways. Built on the same AppDataTable as the Users page — only the column definitions changed.",
+    "searchPlaceholder": "Search by order # or customer…",
+    "retry": "Retry",
+    "error": "Couldn’t load orders. Please try again.",
+    "empty": "No orders found.",
+    "groups": {
+      "order": "Order",
+      "customer": "Customer",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    },
+    "cols": {
+      "orderId": "Order #",
+      "placed": "Placed",
+      "name": "Name",
+      "country": "Country",
+      "carrier": "Carrier",
+      "status": "Status",
+      "eta": "ETA",
+      "method": "Method",
+      "total": "Total",
+      "paid": "Paid"
+    },
+    "status": {
+      "pending": "Pending",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "actions": {
+      "label": "Row actions",
+      "view": "View details",
+      "copy": "Copy order #",
+      "track": "Track shipment",
+      "viewToast": "Viewing order {id}",
+      "copied": "Copied {id} to clipboard",
+      "tracking": "Tracking shipment for {id}"
     }
   },
   "mutations": {

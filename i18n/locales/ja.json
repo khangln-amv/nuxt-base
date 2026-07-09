@@ -24,6 +24,7 @@
     "dashboard": "ダッシュボード",
     "users": "ユーザー",
     "products": "製品",
+    "orders": "注文",
     "patterns": "パターン",
     "mutations": "ミューテーション",
     "language": "言語"
@@ -86,6 +87,46 @@
     "columns": {
       "name": "名称",
       "price": "価格"
+    }
+  },
+  "orders": {
+    "description": "グループ化されたヘッダー（注文／顧客／配送／支払い）と、横スクロールしても常に表示される固定の操作列を備えた横長のテーブルです。ユーザーページと同じ AppDataTable を使い、変更したのは列定義だけです。",
+    "searchPlaceholder": "注文番号または顧客名で検索…",
+    "retry": "再試行",
+    "error": "注文を読み込めませんでした。もう一度お試しください。",
+    "empty": "注文が見つかりません。",
+    "groups": {
+      "order": "注文",
+      "customer": "顧客",
+      "shipping": "配送",
+      "payment": "支払い"
+    },
+    "cols": {
+      "orderId": "注文番号",
+      "placed": "注文日",
+      "name": "氏名",
+      "country": "国",
+      "carrier": "配送業者",
+      "status": "状況",
+      "eta": "到着予定",
+      "method": "支払方法",
+      "total": "合計",
+      "paid": "支払済"
+    },
+    "status": {
+      "pending": "保留中",
+      "shipped": "発送済み",
+      "delivered": "配達済み",
+      "cancelled": "キャンセル"
+    },
+    "actions": {
+      "label": "行の操作",
+      "view": "詳細を表示",
+      "copy": "注文番号をコピー",
+      "track": "配送を追跡",
+      "viewToast": "注文 {id} を表示",
+      "copied": "{id} をクリップボードにコピーしました",
+      "tracking": "{id} の配送を追跡中"
     }
   },
   "mutations": {
